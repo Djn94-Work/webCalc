@@ -1,0 +1,23 @@
+{
+  "name": "webcalc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calc.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Djn94-Work/webCalc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Djn94-Work/webCalc/issues"
+  },
+  "homepage": "https://github.com/Djn94-Work/webCalc#readme",
+  "dependencies": {
+    "supertest": "^4.0.2"
+  }
+}
