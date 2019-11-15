@@ -36,39 +36,34 @@ const requestHandler = (req, res) => {
   let cal;
   const urlmath = req.url.split("'");
   const problem = urlmath[1];
-  console.log(problem);
   const splitprob = problem.split("");
-  console.log(splitprob);
   const a = parseInt(splitprob[0]);
   const b = parseInt(splitprob[2]);
   const op = splitprob[1];
   switch (op) {
     case "+":
       cal = new Calculator(a).add(b);
-      console.log(cal);
-      return cal;
+      let plswrite = cal.a.toString();
+      res.write(plswrite);
+      res.end();
     case "-":
       cal = new Calculator(a).subtract(b);
-      console.log(cal);
-      return cal;
+      let subwrite = cal.a.toString();
+      res.write(subwrite);
+      res.end();
     case "*":
       cal = new Calculator(a).multiply(b);
-      console.log(cal);
-      return cal;
+      let multwrite = cal.a.toString();
+      res.write(multwrite);
+      res.end();
     case "/":
       cal = new Calculator(a).divide(b);
-      console.log(cal);
-      return cal;
+      let divwrite = cal.a.toString();
+      res.write(divwrite);
+      res.end();
     default:
       console.log("default");
   }
-  console.log(a);
-  console.log(b);
-  console.log(op);
-  res.statusCode = 200;
-  // res.write(Calculator.a);
-  res.write(cal); //split the / off the url
-  //split the url into 3 diff strings, switch case on operator to operate on param 1 and 2
 };
 
 const server = http.createServer(requestHandler);
